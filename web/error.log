@@ -1,0 +1,227 @@
+[2025-02-26 13:51:20 +0800] [1737809] [INFO] Starting gunicorn 23.0.0
+[2025-02-26 13:51:20 +0800] [1737809] [INFO] Listening at: http://127.0.0.1:8001 (1737809)
+[2025-02-26 13:51:20 +0800] [1737809] [INFO] Using worker: sync
+[2025-02-26 13:51:20 +0800] [1737812] [INFO] Booting worker with pid: 1737812
+[2025-02-26 13:51:20 +0800] [1737828] [INFO] Booting worker with pid: 1737828
+[2025-02-26 13:51:20 +0800] [1737844] [INFO] Booting worker with pid: 1737844
+[2025-02-26 14:14:09 +0800] [1737809] [CRITICAL] WORKER TIMEOUT (pid:1737828)
+[2025-02-26 14:14:09 +0800] [1737828] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/http/message.py", line 297, in parse
+    self.get_data(unreader, buf)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-02-26 14:14:09 +0800] [1737828] [INFO] Worker exiting (pid: 1737828)
+[2025-02-26 14:14:10 +0800] [1740292] [INFO] Booting worker with pid: 1740292
+[2025-02-26 14:17:53 +0800] [1737809] [INFO] Handling signal: int
+[2025-02-26 14:17:54 +0800] [1740292] [INFO] Worker exiting (pid: 1740292)
+[2025-02-26 14:17:54 +0800] [1737844] [INFO] Worker exiting (pid: 1737844)
+[2025-02-26 14:17:54 +0800] [1737812] [INFO] Worker exiting (pid: 1737812)
+[2025-02-26 14:17:56 +0800] [1740930] [INFO] Starting gunicorn 23.0.0
+[2025-02-26 14:17:56 +0800] [1740930] [INFO] Listening at: http://127.0.0.1:8001 (1740930)
+[2025-02-26 14:17:56 +0800] [1740930] [INFO] Using worker: sync
+[2025-02-26 14:17:56 +0800] [1740933] [INFO] Booting worker with pid: 1740933
+[2025-02-26 14:17:56 +0800] [1740949] [INFO] Booting worker with pid: 1740949
+[2025-02-26 14:17:56 +0800] [1740950] [INFO] Booting worker with pid: 1740950
+[2025-02-26 14:20:47 +0800] [1740930] [CRITICAL] WORKER TIMEOUT (pid:1740950)
+[2025-02-26 14:20:47 +0800] [1740950] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-02-26 14:20:47 +0800] [1740950] [INFO] Worker exiting (pid: 1740950)
+[2025-02-26 14:20:47 +0800] [1741057] [INFO] Booting worker with pid: 1741057
+[2025-02-26 14:21:57 +0800] [1741095] [INFO] Starting gunicorn 23.0.0
+[2025-02-26 14:21:57 +0800] [1741095] [INFO] Listening at: http://127.0.0.1:8001 (1741095)
+[2025-02-26 14:21:57 +0800] [1741095] [INFO] Using worker: sync
+[2025-02-26 14:21:57 +0800] [1741098] [INFO] Booting worker with pid: 1741098
+[2025-02-26 14:21:57 +0800] [1741114] [INFO] Booting worker with pid: 1741114
+[2025-02-26 14:21:57 +0800] [1741115] [INFO] Booting worker with pid: 1741115
+[2025-02-26 14:22:38 +0800] [1741231] [INFO] Starting gunicorn 23.0.0
+[2025-02-26 14:22:38 +0800] [1741231] [INFO] Listening at: http://127.0.0.1:8001 (1741231)
+[2025-02-26 14:22:38 +0800] [1741231] [INFO] Using worker: sync
+[2025-02-26 14:22:38 +0800] [1741234] [INFO] Booting worker with pid: 1741234
+[2025-02-26 14:22:38 +0800] [1741250] [INFO] Booting worker with pid: 1741250
+[2025-02-26 14:22:38 +0800] [1741266] [INFO] Booting worker with pid: 1741266
+[2025-02-26 14:26:51 +0800] [1741231] [INFO] Handling signal: int
+[2025-02-26 14:26:52 +0800] [1741234] [INFO] Worker exiting (pid: 1741234)
+[2025-02-26 14:26:52 +0800] [1741266] [INFO] Worker exiting (pid: 1741266)
+[2025-02-26 14:26:52 +0800] [1741250] [INFO] Worker exiting (pid: 1741250)
+[2025-02-26 14:27:05 +0800] [1742644] [INFO] Starting gunicorn 23.0.0
+[2025-02-26 14:27:05 +0800] [1742644] [INFO] Listening at: http://127.0.0.1:8001 (1742644)
+[2025-02-26 14:27:05 +0800] [1742644] [INFO] Using worker: sync
+[2025-02-26 14:27:05 +0800] [1742647] [INFO] Booting worker with pid: 1742647
+[2025-02-26 14:27:05 +0800] [1742664] [INFO] Booting worker with pid: 1742664
+[2025-02-26 14:27:05 +0800] [1742663] [INFO] Booting worker with pid: 1742663
+[2025-02-26 14:27:39 +0800] [1742775] [INFO] Starting gunicorn 23.0.0
+[2025-02-26 14:27:39 +0800] [1742775] [INFO] Listening at: http://127.0.0.1:8001 (1742775)
+[2025-02-26 14:27:39 +0800] [1742775] [INFO] Using worker: sync
+[2025-02-26 14:27:39 +0800] [1742778] [INFO] Booting worker with pid: 1742778
+[2025-02-26 14:27:39 +0800] [1742794] [INFO] Booting worker with pid: 1742794
+[2025-02-26 14:27:39 +0800] [1742810] [INFO] Booting worker with pid: 1742810
+[2025-02-26 14:33:18 +0800] [1743369] [INFO] Starting gunicorn 23.0.0
+[2025-02-26 14:33:18 +0800] [1743369] [INFO] Listening at: http://127.0.0.1:8001 (1743369)
+[2025-02-26 14:33:18 +0800] [1743369] [INFO] Using worker: sync
+[2025-02-26 14:33:18 +0800] [1743372] [INFO] Booting worker with pid: 1743372
+[2025-02-26 14:33:18 +0800] [1743388] [INFO] Booting worker with pid: 1743388
+[2025-02-26 14:33:18 +0800] [1743404] [INFO] Booting worker with pid: 1743404
+[2025-02-26 14:54:43 +0800] [1747297] [INFO] Starting gunicorn 23.0.0
+[2025-02-26 14:54:43 +0800] [1747297] [INFO] Listening at: http://127.0.0.1:8001 (1747297)
+[2025-02-26 14:54:43 +0800] [1747297] [INFO] Using worker: sync
+[2025-02-26 14:54:43 +0800] [1747301] [INFO] Booting worker with pid: 1747301
+[2025-02-26 14:54:43 +0800] [1747317] [INFO] Booting worker with pid: 1747317
+[2025-02-26 14:54:44 +0800] [1747333] [INFO] Booting worker with pid: 1747333
+[2025-02-26 14:55:42,033] ERROR in app: Exception on /results/3416bd79-226a-4dbf-82d5-1bef186ac127 [GET]
+Traceback (most recent call last):
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/flask/app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/public/softwares/SLAM_rice/web/app.py", line 177, in results
+    df = pd.read_csv(results_path, sep='\t')
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] No such file or directory: 'static/results/f750f2d1-e7ed-42f7-8770-978b9d3312c3/results.csv'
+[2025-02-26 15:02:42 +0800] [1747333] [INFO] Parent changed, shutting down: <Worker 1747333>
+[2025-02-26 15:02:42 +0800] [1747333] [INFO] Worker exiting (pid: 1747333)
+[2025-02-26 15:02:42 +0800] [1747317] [INFO] Parent changed, shutting down: <Worker 1747317>
+[2025-02-26 15:02:42 +0800] [1747317] [INFO] Worker exiting (pid: 1747317)
+[2025-02-26 15:02:56 +0800] [1747301] [INFO] Parent changed, shutting down: <Worker 1747301>
+[2025-02-26 15:02:56 +0800] [1747301] [INFO] Worker exiting (pid: 1747301)
+[2025-02-26 15:03:13 +0800] [1748427] [INFO] Starting gunicorn 23.0.0
+[2025-02-26 15:03:13 +0800] [1748427] [INFO] Listening at: http://127.0.0.1:8001 (1748427)
+[2025-02-26 15:03:13 +0800] [1748427] [INFO] Using worker: sync
+[2025-02-26 15:03:13 +0800] [1748430] [INFO] Booting worker with pid: 1748430
+[2025-02-26 15:03:13 +0800] [1748446] [INFO] Booting worker with pid: 1748446
+[2025-02-26 15:03:13 +0800] [1748462] [INFO] Booting worker with pid: 1748462
+[2025-02-26 15:03:54,608] ERROR in app: Exception on /results/3416bd79-226a-4dbf-82d5-1bef186ac127 [GET]
+Traceback (most recent call last):
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/flask/app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/public/softwares/SLAM_rice/web/app.py", line 177, in results
+    df = pd.read_csv(results_path, sep='\t')
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] No such file or directory: 'static/results/f750f2d1-e7ed-42f7-8770-978b9d3312c3/results.csv'
+[2025-02-26 15:04:43,940] ERROR in app: Exception on /results/3416bd79-226a-4dbf-82d5-1bef186ac127 [GET]
+Traceback (most recent call last):
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/flask/app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/public/softwares/SLAM_rice/web/app.py", line 177, in results
+    df = pd.read_csv(results_path, sep='\t')
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/conda/envs/SLAM/lib/python3.7/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] No such file or directory: 'static/results/f750f2d1-e7ed-42f7-8770-978b9d3312c3/results.csv'
+[2025-02-26 16:13:30 +0800] [1767873] [INFO] Starting gunicorn 23.0.0
+[2025-02-26 16:13:30 +0800] [1767873] [INFO] Listening at: http://127.0.0.1:8001 (1767873)
+[2025-02-26 16:13:30 +0800] [1767873] [INFO] Using worker: sync
+[2025-02-26 16:13:30 +0800] [1767876] [INFO] Booting worker with pid: 1767876
+[2025-02-26 16:13:30 +0800] [1767877] [INFO] Booting worker with pid: 1767877
+[2025-02-26 16:13:30 +0800] [1767908] [INFO] Booting worker with pid: 1767908
+[2025-02-26 16:14:48 +0800] [1768124] [INFO] Starting gunicorn 23.0.0
+[2025-02-26 16:14:48 +0800] [1768124] [INFO] Listening at: http://127.0.0.1:8001 (1768124)
+[2025-02-26 16:14:48 +0800] [1768124] [INFO] Using worker: sync
+[2025-02-26 16:14:48 +0800] [1768127] [INFO] Booting worker with pid: 1768127
+[2025-02-26 16:14:49 +0800] [1768143] [INFO] Booting worker with pid: 1768143
+[2025-02-26 16:14:49 +0800] [1768159] [INFO] Booting worker with pid: 1768159
+[2025-02-26 16:24:31 +0800] [1769120] [INFO] Starting gunicorn 23.0.0
+[2025-02-26 16:24:31 +0800] [1769120] [INFO] Listening at: http://127.0.0.1:8001 (1769120)
+[2025-02-26 16:24:31 +0800] [1769120] [INFO] Using worker: sync
+[2025-02-26 16:24:31 +0800] [1769123] [INFO] Booting worker with pid: 1769123
+[2025-02-26 16:24:31 +0800] [1769139] [INFO] Booting worker with pid: 1769139
+[2025-02-26 16:24:31 +0800] [1769140] [INFO] Booting worker with pid: 1769140
+[2025-02-26 16:27:17 +0800] [1769307] [INFO] Starting gunicorn 23.0.0
+[2025-02-26 16:27:17 +0800] [1769307] [INFO] Listening at: http://127.0.0.1:8001 (1769307)
+[2025-02-26 16:27:17 +0800] [1769307] [INFO] Using worker: sync
+[2025-02-26 16:27:17 +0800] [1769310] [INFO] Booting worker with pid: 1769310
+[2025-02-26 16:27:17 +0800] [1769311] [INFO] Booting worker with pid: 1769311
+[2025-02-26 16:27:17 +0800] [1769342] [INFO] Booting worker with pid: 1769342
+[2025-02-26 16:30:01 +0800] [1769508] [INFO] Starting gunicorn 23.0.0
+[2025-02-26 16:30:01 +0800] [1769508] [INFO] Listening at: http://127.0.0.1:8001 (1769508)
+[2025-02-26 16:30:01 +0800] [1769508] [INFO] Using worker: sync
+[2025-02-26 16:30:01 +0800] [1769511] [INFO] Booting worker with pid: 1769511
+[2025-02-26 16:30:01 +0800] [1769527] [INFO] Booting worker with pid: 1769527
+[2025-02-26 16:30:01 +0800] [1769543] [INFO] Booting worker with pid: 1769543
+[2025-02-26 16:41:59 +0800] [1769812] [INFO] Starting gunicorn 23.0.0
+[2025-02-26 16:41:59 +0800] [1769812] [INFO] Listening at: http://127.0.0.1:8001 (1769812)
+[2025-02-26 16:41:59 +0800] [1769812] [INFO] Using worker: sync
+[2025-02-26 16:41:59 +0800] [1769816] [INFO] Booting worker with pid: 1769816
+[2025-02-26 16:41:59 +0800] [1769832] [INFO] Booting worker with pid: 1769832
+[2025-02-26 16:41:59 +0800] [1769833] [INFO] Booting worker with pid: 1769833

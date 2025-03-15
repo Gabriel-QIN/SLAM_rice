@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SLAM_rice - Retrieve Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #dddddd;
+        }
+        .header .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header img {
+            vertical-align: middle;
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+        .header h1 {
+            display: inline;
+            font-size: 2.5em;
+            margin: 0;
+            color: #333;
+            vertical-align: middle;
+        }
+        .header p {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 10px;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #D2DAFF;
+            padding: 10px;
+        }
+        .nav a {
+            display: inline-block;
+            color: #000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 0 10px;
+        }
+        .nav a:hover {
+            background-color: #ccc;
+            color: black;
+        }
+        .content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .content h2 {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            text-align: center;
+            margin: 20px auto;
+            width: 80%;
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+        }
+        .retrieve-form {
+            text-align: center;
+            margin: 20px auto;
+        }
+        .retrieve-form input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 1em;
+            margin-right: 10px;
+        }
+        .retrieve-form button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #FFC5C5;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .retrieve-form button:hover {
+            background-color: #e6a6a6;
+        }
+        .content a:hover {
+            background-color: #f895d794; /* 鼠标悬停时的背景色 */
+        }
+        .content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+        .result-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .result-container img {
+            max-width: 80%; /* Adjust the percentage as needed */
+            height: auto;
+            margin: auto;
+        }
+        table {
+            margin: auto;
+            width: 80%;
+            border-collapse: collapse;
+            font-size: 1em;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .toggle-container {
+            text-align: center;
+            margin: 20px;
+        }
+        .content a {
+            display: block; /* 设置为块级元素 */
+            padding: 6px 12px; /* 设置内边距 */
+            margin-bottom: 10px; /* 设置下方间距 */
+            border-radius: 5px; /* 设置圆角 */
+            color: #000000; /* 设置文本颜色 */
+            background-color: #6cb0f8a4; /* 设置背景色 */
+            text-decoration: none; /* 移除下划线 */
+        }
+
+        .content a:hover {
+            background-color: #f895d794; /* 鼠标悬停时的背景色 */
+        }
+        #download-section a {
+            display: block; /* 设置为块级元素 */
+            padding: 8px 12px; /* 设置内边距 */
+            margin-bottom: 10px; /* 设置下方间距 */
+            border-radius: 5px; /* 设置圆角 */
+            color: #000000; /* 设置文本颜色 */
+            background-color: #6cb0f8a4; /* 设置背景色 */
+            text-decoration: none; /* 移除下划线 */
+        }
+
+        #download-section a:hover {
+            background-color: #f895d794; /* 鼠标悬停时的背景色 */
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="SLAM Logo">
+        <h1>SLAM_rice</h1>
+    </div>
+    <p>A hybrid deep learning-based method for rice acylation site prediction</p>
+</div>
+
+<div class="nav">
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('predict') }}">Predict</a>
+    <a href="{{ url_for('retrieve') }}">Retrieve</a>
+    <a href="{{ url_for('citation') }}">Citation</a>
+    <a href="{{ url_for('contact_us') }}">Contact</a>
+</div>
+
+<div class="content">
+    <h2>Prediction Result</h2>
+    <div class="result-container">
+        <div>
+            <h4>Task ID: {{ task_id }}</h4>
+        </div>
+
+        <!-- Filter by Confidence -->
+        <div>
+            <h4>Filter by Confidence:</h4>
+            <label>
+                <input type="checkbox" id="showHigh" checked> High
+            </label>
+            <label>
+                <input type="checkbox" id="showMedium" checked> Medium
+            </label>
+            <label>
+                <input type="checkbox" id="showLow" checked> Low
+            </label>
+        </div>
+
+        <!-- Filter by PTM Type -->
+        <div>
+            <h4>Filter by PTM Type:</h4>
+            <label>
+                <input type="checkbox" id="showAcetylation" checked> Acetylation
+            </label>
+            <label>
+                <input type="checkbox" id="showCrotonylation" checked> Crotonylation
+            </label>
+            <label>
+                <input type="checkbox" id="showHydroxyisobutyrylation" checked> 2-Hydroxyisobutyrylation
+            </label>
+            <label>
+                <input type="checkbox" id="showMalonylation" checked> Malonylation
+            </label>
+            <label>
+                <input type="checkbox" id="showSuccinylation" checked> Succinylation
+            </label>
+            <label>
+                <input type="checkbox" id="showLactylation" checked> Lactylation
+            </label>
+        </div>
+
+        <div>
+            <table>
+                <tbody>
+                    {{ prediction|safe }}  <!-- Assuming prediction is a set of <tr> rows -->
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <h4>Bar Plot:</h4>
+            <img src="{{ url_for('static', filename='results/' + task_id + '/bar.png') }}" alt="Bar Plot">
+        </div>
+        <div>
+            <h4>Pie Chart:</h4>
+            <img src="{{ url_for('static', filename='results/' + task_id + '/pie.png') }}" alt="Pie Chart">
+        </div>
+
+        <div id="download-section" class="content">
+            <h2>Download results:</h2>
+            <a href="{{ url_for('static', filename='results/' + task_id + '/results.csv') }}" download>Selected results in CSV format</a><br>
+            <a href="{{ url_for('static', filename='results/' + task_id + '/all_results.csv') }}" download>All results in CSV format</a><br>
+            <a href="{{ url_for('static', filename='results/' + task_id + '/bar.png') }}" download>High-res barplot</a><br>
+            <a href="{{ url_for('static', filename='results/' + task_id + '/pie.png') }}" download>High-res pie chart</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function applyBackgroundColors() {
+        const rows = document.querySelectorAll('table tbody tr');
+        rows.forEach(row => {
+            const confidenceCell = row.querySelector('td:nth-child(7)'); // Assuming Confidence is the 3rd column
+            if (confidenceCell) {
+                switch (confidenceCell.innerText.trim()) {
+                    case 'High':
+                        row.style.backgroundColor = '#FF8A8A'; // Light red for High confidence
+                        break;
+                    case 'Medium':
+                        row.style.backgroundColor = '#B0EBB4'; // Light green for Medium confidence
+                        break;
+                    case 'Low':
+                        row.style.backgroundColor = '#BBE9FF'; // Light blue for Low confidence
+                        break;
+                }
+            }
+        });
+    }
+
+    function toggleConfidence() {
+        const rows = document.querySelectorAll('table tbody tr');
+        const showHigh = document.getElementById('showHigh').checked;
+        const showMedium = document.getElementById('showMedium').checked;
+        const showLow = document.getElementById('showLow').checked;
+
+        rows.forEach(row => {
+            const confidenceCell = row.querySelector('td:nth-child(7)'); // Assuming Confidence is in the 3rd column
+            if (confidenceCell) {
+                const confidence = confidenceCell.innerText.trim();
+                if (
+                    (confidence === 'High' && showHigh) ||
+                    (confidence === 'Medium' && showMedium) ||
+                    (confidence === 'Low' && showLow)
+                ) {
+                    row.style.display = ''; // Show the row
+                } else {
+                    row.style.display = 'none'; // Hide the row
+                }
+            }
+        });
+    }
+
+    function togglePTM() {
+        const rows = document.querySelectorAll('table tbody tr');
+        const showAcetylation = document.getElementById('showAcetylation').checked;
+        const showCrotonylation = document.getElementById('showCrotonylation').checked;
+        const showHydroxyisobutyrylation = document.getElementById('showHydroxyisobutyrylation').checked;
+        const showMalonylation = document.getElementById('showMalonylation').checked;
+        const showSuccinylation = document.getElementById('showSuccinylation').checked;
+        const showLactylation = document.getElementById('showLactylation').checked;
+
+        rows.forEach(row => {
+            const ptmCell = row.querySelector('td:nth-child(2)'); // Assuming PTM Type is in the 4th column
+            if (ptmCell) {
+                const ptmType = ptmCell.innerText.trim();
+                if (
+                    (ptmType === 'Kac' && showAcetylation) ||
+                    (ptmType === 'Kcr' && showCrotonylation) ||
+                    (ptmType === 'Khib' && showHydroxyisobutyrylation) ||
+                    (ptmType === 'Kmal' && showMalonylation) ||
+                    (ptmType === 'Ksucc' && showSuccinylation) ||
+                    (ptmType === 'Kla' && showLactylation)
+                ) {
+                    row.style.display = ''; // Show the row
+                } else {
+                    row.style.display = 'none'; // Hide the row
+                }
+            }
+        });
+    }
+
+    // Event listeners for checkboxes
+    document.getElementById('showHigh').addEventListener('change', toggleConfidence);
+    document.getElementById('showMedium').addEventListener('change', toggleConfidence);
+    document.getElementById('showLow').addEventListener('change', toggleConfidence);
+
+    document.getElementById('showAcetylation').addEventListener('change', togglePTM);
+    document.getElementById('showCrotonylation').addEventListener('change', togglePTM);
+    document.getElementById('showHydroxyisobutyrylation').addEventListener('change', togglePTM);
+    document.getElementById('showMalonylation').addEventListener('change', togglePTM);
+    document.getElementById('showSuccinylation').addEventListener('change', togglePTM);
+    document.getElementById('showLactylation').addEventListener('change', togglePTM);
+
+    window.onload = function() {
+        applyBackgroundColors();
+        toggleConfidence(); // Apply default visibility based on checked checkboxes
+        togglePTM(); // Apply default visibility for PTM types
+    };
+</script>

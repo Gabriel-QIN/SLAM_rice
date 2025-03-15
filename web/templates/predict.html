@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLAM_rice Predictor</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Set the font for the entire page */
+            background-color: #f8f9fa; /* Background color */
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-family: Arial, sans-serif; /* Ensure h1 uses the same font */
+            color: #333; /* You can also set the color if needed */
+            font-weight: bold; /* Make the text bold */
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #dddddd;
+        }
+        .header .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header img {
+            vertical-align: middle;
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+        .header p {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 10px;
+        }
+        .nav {
+            display: flex; /* Use Flexbox */
+            justify-content: center; /* Center align the links */
+            background-color: #D2DAFF;
+            padding: 10px; /* Add some padding */
+        }
+        .nav a {
+            display: inline-block;
+            color: #000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 0 10px; /* Add some margin between links */
+        }
+        .nav a:hover {
+            background-color: #ccc;
+            color: black;
+        }
+        .container {
+            margin-top: 50px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="SLAM Logo">
+        <h1>SLAM_rice</h1>
+    </div>
+    <p>A hybrid deep learning-based method for rice acylation site prediction</p>
+</div>
+
+<div class="nav">
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('predict') }}">Predict</a>
+    <a href="{{ url_for('retrieve') }}">Retrieve</a>
+    <a href="{{ url_for('citation') }}">Citation</a>
+    <a href="{{ url_for('contact_us') }}">Contact</a>
+</div>
+
+<div class="container">
+    <h2 class="text-center">SLAM predictor for rice lysine acylations</h2>
+    <form method="POST" action="{{ url_for('predict') }}" enctype="multipart/form-data" onsubmit="return validateForm()">
+        {{ form.hidden_tag() }}  <!-- CSRF token -->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="mb-3">
+                    <label class="form-label">Enter sequence(s) in FASTA format:</label>
+                    {{ form.sequences(class="form-control wide-input", rows=10) }} <!-- Increased height and width -->
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Or upload a file in FASTA format:</label>
+                    {{ form.sequence_file(class="form-control wide-input") }}
+                </div>
+                <div class="alert alert-warning" id="fileAlert">
+                    Please provide either a sequence or upload a file in FASTA format.
+                </div>
+                <div class="mb-3">
+                    <button type="button" class="btn btn-secondary" id="exampleBtn">Load Example Sequence</button>  <!-- Button to load example -->
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="ptm-card">
+                    <h5 class="text-center">Acylation Types:</h5>
+                    <div class="form-check narrow-checkbox">
+                        {{ form.ptm_choices[0].acetylation(class="form-check-input") }} 
+                        {{ form.ptm_choices[0].acetylation.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check narrow-checkbox">
+                        {{ form.ptm_choices[0].crotonylation(class="form-check-input") }} 
+                        {{ form.ptm_choices[0].crotonylation.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check narrow-checkbox">
+                        {{ form.ptm_choices[0].hydroxyisobutyrylation(class="form-check-input") }} 
+                        {{ form.ptm_choices[0].hydroxyisobutyrylation.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check narrow-checkbox">
+                        {{ form.ptm_choices[0].malonylation(class="form-check-input") }} 
+                        {{ form.ptm_choices[0].malonylation.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check narrow-checkbox">
+                        {{ form.ptm_choices[0].succinylation(class="form-check-input") }} 
+                        {{ form.ptm_choices[0].succinylation.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check narrow-checkbox">
+                        {{ form.ptm_choices[0].lactylation(class="form-check-input") }} 
+                        {{ form.ptm_choices[0].lactylation.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check narrow-checkbox">
+                        {{ form.all_ptm(class="form-check-input", onclick="togglePTMOptions(this)") }}
+                        {{ form.all_ptm.label(class="form-check-label") }} <!-- Select All at the bottom -->
+                    </div>
+                </div>
+                <div class="confidence-card">
+                    <h5 class="text-center">Confidence:</h5>
+                    <div class="form-check narrow-checkbox">
+                        {{ form.cutoff_high(class="form-check-input") }} 
+                        {{ form.cutoff_high.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check narrow-checkbox">
+                        {{ form.cutoff_medium(class="form-check-input") }} 
+                        {{ form.cutoff_medium.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check narrow-checkbox">
+                        {{ form.cutoff_low(class="form-check-input") }} 
+                        {{ form.cutoff_low.label(class="form-check-label") }}
+                    </div>
+                    <div class="form-check narrow-checkbox">
+                        {{ form.all_cutoff(class="form-check-input", onclick="toggleCutoffOptions(this)") }} 
+                        {{ form.all_cutoff.label(class="form-check-label") }} <!-- Select All for Confidence -->
+                    </div>
+                </div>                    
+            </div>
+        </div>
+        <div class="text-center">
+            {{ form.submit(class="btn btn-primary") }}
+            <!-- <button type="submit" class="btn btn-primary" onclick="showLoading()">Submit</button> -->
+        </div>
+        <!-- <script>
+            function showLoading() {
+                // 显示 loading 页面
+                document.body.innerHTML = '<h1 class="text-center">Loading...</h1>';
+                document.getElementById('prediction-form').submit(); // 提交表单
+            }
+        </script> -->
+    </form>
+    <div class="citation text-center">
+        <blockquote>
+            If you find this method in your study, please kindly cite the following paper:<br>
+            <strong>Qin, Z., Liu, H., Zhao, P., Wang, K., Ren, H., Miao, C., … Chen, Z. (2024). SLAM: Structure-aware lysine β-hydroxybutyrylation prediction with protein language model. International Journal of Biological Macromolecules, 280, 135741. doi:10.1016/j.ijbiomac.2024.135741</strong>
+        </blockquote>
+    </div>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-warning mt-3">
+                <ul class="mb-0">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    {% endwith %}
+</div>
+
+<script>
+    document.getElementById("exampleBtn").addEventListener("click", function() {
+        // Fetch the example FASTA file from the server
+        fetch("/static/example.fasta")
+            .then(response => response.text())
+            .then(data => {
+                // Populate the sequence field with the contents of the example file
+                document.getElementById("sequences").value = data;
+            })
+            .catch(error => {
+                console.error("Error loading example file:", error);
+            });
+    });
+</script>
+
+
+<!-- Bootstrap JS (optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function togglePTMOptions(selectAllCheckbox) {
+        const ptmCheckboxes = document.querySelectorAll('.ptm-card .form-check-input:not(#all_ptm)');
+        ptmCheckboxes.forEach(checkbox => {
+            checkbox.checked = selectAllCheckbox.checked;
+        });
+    }
+    function toggleCutoffOptions(selectAllCheckbox) {
+        const cutoffCheckboxes = document.querySelectorAll('.confidence-card .form-check-input:not(#all_cutoff)');
+        cutoffCheckboxes.forEach(checkbox => {
+            checkbox.checked = selectAllCheckbox.checked;
+        });
+    }
+
+    function validateForm() {
+        const fileInput = document.querySelector('input[type="file"]');
+        const sequenceInput = document.querySelector('textarea');
+        const alertBox = document.getElementById('fileAlert');
+
+        // Check if both inputs are empty
+        if (!fileInput.value && !sequenceInput.value) {
+            alertBox.style.display = 'block'; // Show alert if no input is provided
+            return false; // Prevent form submission
+        } else {
+            alertBox.style.display = 'none'; // Hide alert if input is provided
+            return true; // Allow form submission
+        }
+    }
+</script>
+</body>
+</html>

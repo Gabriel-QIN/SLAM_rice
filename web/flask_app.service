@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve Flask app
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=root  # 使用合适的用户权限
+Group=root  # 使用合适的组
+WorkingDirectory=/public/softwares/SLAM_rice/web  # Flask 应用路径
+ExecStart=/usr/conda/envs/SLAM/bin/gunicorn --workers 3 --bind 127.0.0.1:8001 app:app  # 启动 Gunicorn，绑定到本地接口和端口
+
+[Install]
+WantedBy=multi-user.target

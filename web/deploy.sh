@@ -1,0 +1,1 @@
+nohup gunicorn --workers 3 --bind 127.0.0.1:8001 app:app --access-logfile access.log --error-logfile error.log --timeout 120 &

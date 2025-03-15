@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SLAM_rice - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #dddddd;
+        }
+        .header .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header img {
+            vertical-align: middle;
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+        .header h1 {
+            display: inline;
+            font-size: 2.5em;
+            margin: 0;
+            color: #333;
+            vertical-align: middle;
+        }
+        .header p {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 10px;
+        }
+        .nav {
+            background-color: #D2DAFF;
+            overflow: hidden;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        .nav a {
+            display: inline-block;
+            color: #000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .nav a:hover {
+            background-color: #ccc;
+            color: black;
+        }
+        .content {
+            padding: 20px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .content h2 {
+            text-align: center;
+            margin: 20px auto;
+            margin-top: 10px; /* Adjust the top margin */
+            margin-bottom: 10px; /* Adjust the bottom margin */
+        }
+        .content p {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+        }
+        .content img {
+            display: block;
+            margin: auto;
+            max-width: 75%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="SLAM Logo">
+            <h1>SLAM_rice</h1>
+        </div>
+        <p>A hybrid deep learning-based method for rice acylation site prediction</p>
+    </div>
+
+<div class="nav">
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('predict') }}">Predict</a>
+    <a href="{{ url_for('retrieve') }}">Retrieve</a>
+    <a href="{{ url_for('citation') }}">Citation</a>
+    <a href="{{ url_for('contact_us') }}">Contact</a>
+</div>
+
+<div class="content">
+    <h2>Introduction to lysine acylation!</h2>
+    <p>
+        As a main subtype of post-translational modification (PTM), protein lysine acylations (PLAs) play crucial roles in regulating diverse functions of proteins. With recent advancements in proteomics technology, the identification of PTM is becoming a data-rich field. A large amount of experimentally verified data is urgently required to be translated into valuable biological insights.
+    </p>
+    <img src="{{ url_for('static', filename='images/milestone.png') }}" alt="SLAM overview" style="display: block; margin: auto;">
+</div>
+
+<div class="content">
+    <h2>Hybrid deep learning model architecture</h2>
+    <p>The developed geometric deep learning framework includes 1) a multi-track encoder module to concurrently embed the protein structure and sequence features into a latent representation; 2) a decoder layer consisting of an attention layer and a multi-layer perceptron followed with a sigmoid function for downstream classification. The sequence encoder is designed as hybrid deep learning neural networks to learn dependencies between residues with two-track feature encoders and two-track adaptive encoders. Adaptive encoders enable learn-from-data for SLAM by using learnable word embeddings, and feature encoders provide expert-level information and evolutionary constraints extracted from protein language model. For structure encoder, a multi-layer graph neural network (GNN) is implemented to capture high-level residue relationships considering geometry.</p>
+    <img src="{{ url_for('static', filename='images/method.png') }}" alt="SLAM architecture" style="display: block; margin: auto;">
+</div>
+
+<div class="content">
+    <div class="citation">
+        <h3>If you use SLAM in your work or publication, please kindly cite the following paper:</h3>
+        <div style="background-color: #f0f0f0; padding: 10px; border-radius: 8px; margin-top: 10px;">
+            <li>Qin, Z., Liu, H., Zhao, P., Wang, K., Ren, H., Miao, C., … Chen, Z. (2024). SLAM: Structure-aware lysine β-hydroxybutyrylation prediction with protein language model. <em>International Journal of Biological Macromolecules</em>, 280, 135741. doi:10.1016/j.ijbiomac.2024.135741.</li>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

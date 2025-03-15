@@ -1,0 +1,346 @@
+*** Starting uWSGI 2.0.20 (64bit) on [Wed Feb 26 14:38:43 2025] ***
+compiled with version: 9.4.0 on 22 December 2021 18:19:25
+os: Linux-5.15.0-107-generic #117-Ubuntu SMP Fri Apr 26 12:26:49 UTC 2024
+nodename: Bioinfo
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /public/softwares/SLAM_rice/web
+writing pidfile to uwsgi.pid
+detected binary path: /usr/conda/envs/SLAM/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /public/softwares/SLAM_rice/web
+your processes number limit is 122424
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+building mime-types dictionary from file /etc/mime.types...1516 entry found
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.12 | packaged by conda-forge | (default, Oct 26 2021, 06:08:21)  [GCC 9.4.0]
+Python main interpreter initialized at 0x5591a0b27cb0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 8326836 bytes (8131 KB) for 96 cores
+*** Operational MODE: preforking+threaded ***
+failed to open python file SLAM_web/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1744553)
+spawned uWSGI worker 1 (pid: 1744555, cores: 12)
+spawned uWSGI worker 2 (pid: 1744556, cores: 12)
+spawned uWSGI worker 3 (pid: 1744557, cores: 12)
+spawned uWSGI worker 4 (pid: 1744558, cores: 12)
+spawned uWSGI worker 5 (pid: 1744559, cores: 12)
+spawned uWSGI worker 6 (pid: 1744560, cores: 12)
+spawned uWSGI worker 7 (pid: 1744561, cores: 12)
+spawned uWSGI worker 8 (pid: 1744562, cores: 12)
+*** Starting uWSGI 2.0.20 (64bit) on [Wed Feb 26 14:42:59 2025] ***
+compiled with version: 9.4.0 on 22 December 2021 18:19:25
+os: Linux-5.15.0-107-generic #117-Ubuntu SMP Fri Apr 26 12:26:49 UTC 2024
+nodename: Bioinfo
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /public/softwares/SLAM_rice/web
+writing pidfile to uwsgi.pid
+detected binary path: /usr/conda/envs/SLAM/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /public/softwares/SLAM_rice/web
+your processes number limit is 122424
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+building mime-types dictionary from file /etc/mime.types...1516 entry found
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.12 | packaged by conda-forge | (default, Oct 26 2021, 06:08:21)  [GCC 9.4.0]
+Python main interpreter initialized at 0x55668e07fcb0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 8326836 bytes (8131 KB) for 96 cores
+*** Operational MODE: preforking+threaded ***
+failed to open python file web/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1745702)
+spawned uWSGI worker 1 (pid: 1745704, cores: 12)
+spawned uWSGI worker 2 (pid: 1745705, cores: 12)
+spawned uWSGI worker 3 (pid: 1745706, cores: 12)
+spawned uWSGI worker 4 (pid: 1745707, cores: 12)
+spawned uWSGI worker 5 (pid: 1745708, cores: 12)
+spawned uWSGI worker 6 (pid: 1745709, cores: 12)
+spawned uWSGI worker 7 (pid: 1745710, cores: 12)
+spawned uWSGI worker 8 (pid: 1745711, cores: 12)
+*** Starting uWSGI 2.0.20 (64bit) on [Wed Feb 26 14:46:07 2025] ***
+compiled with version: 9.4.0 on 22 December 2021 18:19:25
+os: Linux-5.15.0-107-generic #117-Ubuntu SMP Fri Apr 26 12:26:49 UTC 2024
+nodename: Bioinfo
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /public/softwares/SLAM_rice/web
+writing pidfile to uwsgi.pid
+detected binary path: /usr/conda/envs/SLAM/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /public/softwares/SLAM_rice/web
+your processes number limit is 122424
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+building mime-types dictionary from file /etc/mime.types...1516 entry found
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8001).
+bind(): Address already in use [core/socket.c line 769]
+*** Starting uWSGI 2.0.20 (64bit) on [Wed Feb 26 14:46:38 2025] ***
+compiled with version: 9.4.0 on 22 December 2021 18:19:25
+os: Linux-5.15.0-107-generic #117-Ubuntu SMP Fri Apr 26 12:26:49 UTC 2024
+nodename: Bioinfo
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /public/softwares/SLAM_rice/web
+writing pidfile to uwsgi.pid
+detected binary path: /usr/conda/envs/SLAM/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /public/softwares/SLAM_rice/web
+your processes number limit is 122424
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+building mime-types dictionary from file /etc/mime.types...1516 entry found
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8001).
+bind(): Address already in use [core/socket.c line 769]
+*** Starting uWSGI 2.0.20 (64bit) on [Wed Feb 26 14:50:06 2025] ***
+compiled with version: 9.4.0 on 22 December 2021 18:19:25
+os: Linux-5.15.0-107-generic #117-Ubuntu SMP Fri Apr 26 12:26:49 UTC 2024
+nodename: Bioinfo
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /public/softwares/SLAM_rice/web
+writing pidfile to uwsgi.pid
+detected binary path: /usr/conda/envs/SLAM/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /public/softwares/SLAM_rice/web
+your processes number limit is 122424
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+building mime-types dictionary from file /etc/mime.types...1516 entry found
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8001).
+bind(): Address already in use [core/socket.c line 769]
+Wed Feb 26 14:53:14 2025 - uWSGI worker 8 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 7 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 8 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 6 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 8 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 7 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 7 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 6 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 8 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 6 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 6 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 8 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 7 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:53:14 2025 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.20 (64bit) on [Wed Feb 26 14:53:19 2025] ***
+compiled with version: 9.4.0 on 22 December 2021 18:19:25
+os: Linux-5.15.0-107-generic #117-Ubuntu SMP Fri Apr 26 12:26:49 UTC 2024
+nodename: Bioinfo
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /public/softwares/SLAM_rice/web
+writing pidfile to uwsgi.pid
+detected binary path: /usr/conda/envs/SLAM/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /public/softwares/SLAM_rice/web
+your processes number limit is 122424
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+building mime-types dictionary from file /etc/mime.types...1516 entry found
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.12 | packaged by conda-forge | (default, Oct 26 2021, 06:08:21)  [GCC 9.4.0]
+Python main interpreter initialized at 0x55dbe731fcf0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 8326836 bytes (8131 KB) for 96 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 3 seconds on interpreter 0x55dbe731fcf0 pid: 1746709 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1746709)
+spawned uWSGI worker 1 (pid: 1746747, cores: 12)
+spawned uWSGI worker 2 (pid: 1746759, cores: 12)
+spawned uWSGI worker 3 (pid: 1746771, cores: 12)
+spawned uWSGI worker 4 (pid: 1746783, cores: 12)
+spawned uWSGI worker 5 (pid: 1746795, cores: 12)
+spawned uWSGI worker 6 (pid: 1746807, cores: 12)
+spawned uWSGI worker 7 (pid: 1746819, cores: 12)
+spawned uWSGI worker 8 (pid: 1746831, cores: 12)
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 1746747)...
+Gracefully killing worker 3 (pid: 1746771)...
+Gracefully killing worker 4 (pid: 1746783)...
+Gracefully killing worker 6 (pid: 1746807)...
+Gracefully killing worker 8 (pid: 1746831)...
+Gracefully killing worker 7 (pid: 1746819)...
+Gracefully killing worker 5 (pid: 1746795)...
+Gracefully killing worker 2 (pid: 1746759)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+worker 6 buried after 1 seconds
+worker 7 buried after 1 seconds
+worker 8 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /public/softwares/SLAM_rice/web
+closing all non-uwsgi socket fds > 2 (max_fd = 65535)...
+found fd 3 mapped to socket 0 (127.0.0.1:8001)
+running /usr/conda/envs/SLAM/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+[uwsgi-static] added mapping for /static => /public/softwares/SLAM _rice/web/static
+*** Starting uWSGI 2.0.20 (64bit) on [Wed Feb 26 14:53:31 2025] ***
+compiled with version: 9.4.0 on 22 December 2021 18:19:25
+os: Linux-5.15.0-107-generic #117-Ubuntu SMP Fri Apr 26 12:26:49 UTC 2024
+nodename: Bioinfo
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /public/softwares/SLAM_rice/web
+detected binary path: /usr/conda/envs/SLAM/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /public/softwares/SLAM_rice/web
+your processes number limit is 122424
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+building mime-types dictionary from file /etc/mime.types...1516 entry found
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.12 | packaged by conda-forge | (default, Oct 26 2021, 06:08:21)  [GCC 9.4.0]
+Python main interpreter initialized at 0x55f2cedea6b0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 8326836 bytes (8131 KB) for 96 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x55f2cedea6b0 pid: 1746709 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1746709)
+spawned uWSGI worker 1 (pid: 1746946, cores: 12)
+spawned uWSGI worker 2 (pid: 1746958, cores: 12)
+spawned uWSGI worker 3 (pid: 1746970, cores: 12)
+spawned uWSGI worker 4 (pid: 1746982, cores: 12)
+spawned uWSGI worker 5 (pid: 1746994, cores: 12)
+spawned uWSGI worker 6 (pid: 1747006, cores: 12)
+spawned uWSGI worker 7 (pid: 1747018, cores: 12)
+spawned uWSGI worker 8 (pid: 1747030, cores: 12)
+Wed Feb 26 14:54:07 2025 - uWSGI worker 8 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 6 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 7 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 7 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 8 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 8 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 7 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 6 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 6 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+!!! uWSGI process 1746946 got Segmentation Fault !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 6 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Feb 26 14:54:07 2025 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+malloc(): unsorted double linked list corrupted

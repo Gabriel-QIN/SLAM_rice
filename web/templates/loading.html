@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SLAM_rice - Loading</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #dddddd;
+        }
+        .header .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header img {
+            vertical-align: middle;
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+        .header h1 {
+            display: inline;
+            font-size: 2.5em;
+            margin: 0;
+            color: #333;
+            vertical-align: middle;
+        }
+        .header p {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 10px;
+        }
+        .nav {
+            background-color: #D2DAFF;
+            overflow: hidden;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        .nav a {
+            display: inline-block;
+            color: #000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .nav a:hover {
+            background-color: #ccc;
+            color: black;
+        }
+        .content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+        .content p {
+            margin: 20px auto;
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+        }
+        .loading {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+        /* CSS加载动画 */
+        @keyframes loading {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+        }
+        .loading {
+        border: 15px solid #f3f3f3; /* 白色边框 */
+        border-top: 15px solid #1b95e7b6; /* 蓝色顶部边框 */
+        border-radius: 75%; /* 圆形 */
+        width: 150px;
+        height: 150px;
+        animation: loading 2s linear infinite; /* 应用动画 */
+        margin: auto; /* 居中 */
+        margin-top: 50px; /* 与顶部的距离 */
+        }
+    </style>
+    <script>
+        function checkStatus() {
+            fetch(`/SLAM_rice/check_status/{{ task_id }}/`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'complete') {
+                        window.location.href = `/SLAM/results/${data.task_id}/`;
+                    } else {
+                        setTimeout(checkStatus, 1000);  // 每1秒检查一次
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        // 调用 checkStatus 函数，页面加载完成时执行
+        window.onload = function() {
+            setTimeout(checkStatus, 1000);  // 首次调用时等待2秒
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        {% load static %}
+        <div class="logo-container">
+            <img src="{% static 'predictor/images/logo.png' %}" alt="SLAM Logo">
+            <h1>SLAM_rice</h1>
+        </div>
+        <p>A hybrid deep learning-based method for rice acylation site prediction</p>
+    </div>
+    
+    <div class="nav">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'predict' %}">Predict</a>
+        <a href="{% url 'retrieve' %}">Retrieve</a>
+        <a href="{% url 'download' %}">Download</a>
+        <a href="{% url 'citation' %}">Citation</a>
+        <a href="{% url 'contact_us' %}">Contact</a>
+    </div>
+
+    <div class="content">
+        <h2>Processing your request, please wait......</h2>
+        <p>Your Task ID: <strong>{{ task_id }}</strong></p>
+        <!-- HTML加载动画 -->
+        <div class="loading"></div>
+    </div>
+    <script>
+        function checkStatus() {
+            const taskId = "{{ task_id }}";
+            fetch(`/SLAM_rice/check_status/${taskId}/`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'complete') {
+                        window.location.href = `/SLAM/results/${taskId}/`;
+                    } else {
+                        setTimeout(checkStatus, 2000); // 2秒后再次检查状态
+                    }
+                })
+                .catch(error => {
+                    console.error('Error checking status:', error);
+                });
+        }
+
+        // 页面加载后开始检查状态
+        window.onload = checkStatus;
+    </script>
+</body>
+</html>
